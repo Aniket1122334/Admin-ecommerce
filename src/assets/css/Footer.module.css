@@ -1,0 +1,46 @@
+.footer {
+  background-color: #111827;
+  color: #e5e7eb;
+  text-align: center;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.iconLink {
+  font-size: 24px;
+  color: #e5e7eb;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.iconLink:hover {
+  transform: scale(1.2);
+  color: #38bdf8; /* Tailwind's sky-400 for nice hover color */
+}
+
+/* Responsive for small screens */
+@media (max-width: 600px) {
+  .footer {
+    padding: 16px 8px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+
+  .iconLink {
+    font-size: 20px;
+  }
+}

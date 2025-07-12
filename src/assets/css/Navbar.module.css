@@ -1,0 +1,300 @@
+/* === CSS VARIABLES === */
+:root {
+  --primary-color: #4a8a9b; /* Softer teal */
+  --accent-color: #d06f6c; /* Muted coral */
+  --highlight-color: #eef5f7; /* Very light highlight */
+  --text-primary: #1e2a32; /* Dark muted text */
+  --text-secondary: #5c6b78; /* Soft gray text */
+  --border-color: #d9e2e6; /* Light border */
+  --bg-card: #ffffff; /* Light card background */
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  --hover-bg: #f0f4f6; /* Very light hover */
+  --light-gray: #f7f9fa; /* Extra soft gray */
+  --font-size-heading: 1.5rem;
+  --font-size-text: 14px;
+  --font-size-button: 14px;
+  --transition: 0.3s ease-in-out;
+}
+
+/* === THEME BACKGROUNDS === */
+.darkTheme {
+  background-color: #1e2a32;
+  color: #d9e2e6;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.lightTheme {
+  background-color: #eef5f7;
+  color: #1e2a32;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.logoutPopup {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f44336; /* Red background for logout */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: slideUp 0.3s ease-out, fadeOut 2s ease-out 1.7s forwards;
+}
+
+@keyframes slideUp {
+  from {
+    bottom: -50px;
+    opacity: 0;
+  }
+  to {
+    bottom: 20px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* === NAVBAR BASE === */
+.navbar {
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  transition: background-color var(--transition), box-shadow var(--transition);
+}
+
+.navDark {
+  background-color: #2a3d4f;
+}
+
+.navLight {
+  background-color: var(--bg-card);
+}
+
+/* === BRAND === */
+.brand {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-size-heading);
+  font-weight: 600;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.brand:hover {
+  color: #3a6e7f;
+}
+
+/* === NAV LINKS === */
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Open Sans", sans-serif;
+  font-size: var(--font-size-text);
+  color: var(--text-primary);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: color var(--transition), background-color var(--transition);
+}
+
+.navLink:hover {
+  color: var(--primary-color);
+  background-color: var(--hover-bg);
+}
+
+.navDark .navLink {
+  color: #d9e2e6;
+}
+
+.navDark .navLink:hover {
+  color: var(--primary-color);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navLight .navLink {
+  color: var(--text-primary);
+}
+
+.navLight .navLink:hover {
+  color: var(--primary-color);
+  background-color: var(--hover-bg);
+}
+
+/* === ICONS === */
+.icon {
+  font-size: 16px;
+  transition: transform var(--transition);
+}
+
+.navLink:hover .icon {
+  transform: translateX(2px);
+}
+
+/* === DROPDOWN === */
+.dropdownDark {
+  background-color: #34495e;
+  border: 1px solid rgba(217, 226, 230, 0.2);
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+}
+
+.dropdownDark li a {
+  color: #f0f4f6;
+}
+
+.dropdownLight {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+}
+
+/* ✅ Dropdown Items */
+.dropdown-menu .dropdown-item {
+  font-family: "Open Sans", sans-serif;
+  font-size: var(--font-size-text);
+  padding: 8px 16px;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+/* Light Theme Text */
+.dropdownLight .dropdown-item {
+  color: var(--text-primary);
+}
+
+/* Dark Theme Text (✅ WHITE) */
+.dropdownDark .dropdown-item {
+  color: white;
+}
+
+/* Hover Styles */
+.dropdownDark .dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--primary-color);
+}
+
+.dropdownLight .dropdown-item:hover {
+  background-color: var(--hover-bg);
+  color: var(--primary-color);
+}
+
+/* === TOGGLE BUTTON === */
+.toggleBtn {
+  padding: 6px 10px;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  color: var(--text-primary);
+  font-size: var(--font-size-button);
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition),
+    transform var(--transition);
+}
+
+.navDark .toggleBtn {
+  color: #d9e2e6;
+  border-color: rgba(217, 226, 230, 0.5);
+}
+
+.navDark .toggleBtn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+}
+
+.navLight .toggleBtn:hover {
+  background-color: var(--hover-bg);
+  transform: scale(1.1);
+}
+
+/* === ANIMATION === */
+@keyframes themeFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.navbar,
+.navLink,
+.dropdown-menu,
+.toggleBtn {
+  animation: themeFade var(--transition) ease-in-out;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .brand {
+    font-size: 1.3rem;
+  }
+
+  .navLink {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .icon {
+    font-size: 14px;
+  }
+
+  .toggleBtn {
+    padding: 4px 8px;
+    font-size: 13px;
+  }
+
+  .dropdown-menu .dropdown-item {
+    font-size: 13px;
+    padding: 6px 12px;
+    color: white;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 10px;
+  }
+
+  .brand {
+    font-size: 1.2rem;
+  }
+
+  .navLink {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  .icon {
+    font-size: 12px;
+  }
+
+  .toggleBtn {
+    padding: 3px 6px;
+    font-size: 12px;
+  }
+
+  .dropdown-menu .dropdown-item {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+}

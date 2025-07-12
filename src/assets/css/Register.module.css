@@ -1,0 +1,309 @@
+/* Define CSS Variables for Consistent Theming with Soft Colors */
+:root {
+  --primary-color: #4a8a9b; /* Softer teal */
+  --accent-color: #d06f6c; /* Muted coral */
+  --highlight-color: #eef5f7; /* Very light highlight */
+  --text-primary: #1e2a32; /* Dark muted text */
+  --text-secondary: #5c6b78; /* Soft gray text */
+  --border-color: #d9e2e6; /* Light border */
+  --bg-card: #ffffff; /* Light card background */
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  --hover-bg: #f0f4f6; /* Very light hover */
+  --light-gray: #f7f9fa; /* Extra soft gray */
+  --font-size-heading: 1.8rem;
+  --font-size-text: 14px;
+  --font-size-button: 14px;
+  --transition: 0.3s ease-in-out; /* Smoother transition for animations */
+}
+
+/* Theme Classes */
+.darkTheme {
+  --highlight-color: #1e2a32; /* Dark background */
+  --bg-card: #2a3d4f; /* Darker card background */
+  --text-primary: #d9e2e6; /* Light text */
+  --text-secondary: #a3b1b8; /* Lighter secondary text */
+  --border-color: rgba(217, 226, 230, 0.3); /* Faint border */
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.lightTheme {
+  --highlight-color: #eef5f7; /* Light background */
+  --bg-card: #ffffff; /* Light card background */
+  --text-primary: #1e2a32; /* Dark text */
+  --text-secondary: #5c6b78; /* Soft gray text */
+  --border-color: #d9e2e6; /* Light border */
+  transition: background-color var(--transition), color var(--transition);
+}
+
+/* Wrapper */
+.wrapper {
+  padding: 40px 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Form */
+.form {
+  width: 100%;
+  max-width: 400px;
+  padding: 24px;
+  background-color: var(--bg-card);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(74, 138, 155, 0.1);
+}
+
+/* Title */
+.title {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-size-heading);
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0 0 20px 0;
+  text-align: center;
+  transition: color var(--transition);
+}
+
+.title:hover {
+  color: #3a6e7f;
+}
+
+/* Input */
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: var(--font-size-text);
+  font-family: "Open Sans", sans-serif;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--light-gray);
+  color: var(--text-primary);
+  box-sizing: border-box;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(74, 138, 155, 0.2);
+}
+
+/* Password Wrapper */
+.passwordWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.passwordWrapper .input {
+  padding-right: 40px; /* Space for eye icon */
+}
+
+.eyeIcon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: color var(--transition), transform var(--transition);
+}
+
+.eyeIcon:hover {
+  color: var(--primary-color);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Button */
+.button {
+  padding: 12px 24px;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-size-button);
+  font-weight: 600;
+  cursor: pointer;
+  align-self: center;
+  transition: background-color var(--transition), transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.button:hover {
+  background-color: #3a6e7f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 138, 155, 0.2);
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(74, 138, 155, 0.2);
+}
+
+/* OR Divider */
+.or {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: var(--font-size-text);
+  position: relative;
+  font-family: "Open Sans", sans-serif;
+}
+
+.or::before,
+.or::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background-color: var(--border-color);
+  transform: translateY(-50%);
+}
+
+.or::before {
+  left: 0;
+}
+
+.or::after {
+  right: 0;
+}
+
+/* Google Button */
+.googleBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-size-button);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition),
+    box-shadow var(--transition);
+}
+
+.googleBtn:hover {
+  background-color: var(--hover-bg);
+  color: var(--primary-color);
+  box-shadow: var(--shadow);
+}
+
+.icon {
+  color: #db4437; /* Google red */
+  font-size: 16px;
+  transition: transform var(--transition);
+}
+
+.googleBtn:hover .icon {
+  transform: scale(1.1);
+}
+
+/* Login Text */
+.loginText {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: var(--font-size-text);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.loginLink {
+  color: var(--primary-color);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.loginLink:hover {
+  color: #3a6e7f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 30px 15px;
+  }
+
+  .form {
+    padding: 20px;
+    max-width: 350px;
+    gap: 16px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+
+  .input {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .button,
+  .googleBtn {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  .or {
+    font-size: 13px;
+  }
+
+  .loginText {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 20px 10px;
+  }
+
+  .form {
+    padding: 16px;
+    max-width: 100%;
+    gap: 12px;
+  }
+
+  .title {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+
+  .input {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .button,
+  .googleBtn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .or {
+    font-size: 12px;
+  }
+
+  .loginText {
+    font-size: 12px;
+  }
+}
